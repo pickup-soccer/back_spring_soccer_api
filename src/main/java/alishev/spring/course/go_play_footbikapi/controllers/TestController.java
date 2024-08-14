@@ -15,9 +15,9 @@ public class TestController {
 
     private final PlayerService playerService;
 
-    @GetMapping("/get_all")
+    @GetMapping("/hello_dulik")
     public String get() {
-        return "hello";
+        return "A DULA DUT LUBIT VOT ON I DUET";
     }
 
 }
