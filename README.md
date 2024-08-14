@@ -4,14 +4,14 @@ BEFORE YOU START BUILDING YOUR CONTAINERS YOU HAVE TO DOWNLOAD POSTGRESQL IMAGE 
 
 ALL THESE COMMANDS IN RANDOM SEQUENCE SO YOU CAN PRACTICE A LITTLE BIT
 
-docker rmi <id>
-docker images
-docker rm <id>
-docker ps
-docker ps -a
-docker-compose up --build
-docker-compose up
-docker-compose down
+| docker rmi <id> |
+| docker images |
+| docker rm <id> |
+| docker ps |
+| docker ps -a |
+| docker-compose up --build |
+| docker-compose up |
+| docker-compose down |
 
 After you run application if everything is ok 
 
