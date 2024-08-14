@@ -1,9 +1,12 @@
 package alishev.spring.course.go_play_footbikapi.security.dao;
 
 import alishev.spring.course.go_play_footbikapi.models.Player;
+import alishev.spring.course.go_play_footbikapi.models.Role;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -27,7 +30,11 @@ public class PlayerDao implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        for(Role role : player.getRoles()) {
+            authorities.add(new SimpleGrantedAuthority(role.getName()));
+        }
+        return authorities;
     }
 
     @Override
@@ -48,4 +55,5 @@ public class PlayerDao implements UserDetails {
     public boolean isAccountNonExpired() {
         return UserDetails.super.isAccountNonExpired();
     }
+
 }
